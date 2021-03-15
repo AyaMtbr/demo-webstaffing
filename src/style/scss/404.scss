@@ -1,0 +1,10 @@
+@import 'base/reset';
+@import 'base/base';
+@import 'base/variable';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'component/button';
+
+body {
+  background: red;
+}

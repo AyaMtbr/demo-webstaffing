@@ -1,0 +1,361 @@
+@import 'base/reset';
+@import 'base/base';
+@import 'base/variable';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'component/button';
+@import 'component/cta';
+
+/* ------------------
+  Common style
+  ------------------ */
+.section {
+  margin-top: 30px;
+
+  h3 {
+    margin: 10px auto 20px;
+  }
+}
+
+.sub_title {
+  font-weight: bold;
+  color: $secondary_color;
+}
+
+/* ------------------
+  Section Top
+  ------------------ */
+.sec_top {
+  width: 100%;
+  height: 70vh;
+  position: relative;
+  z-index: -1;
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    mix-blend-mode: overlay;
+    width: 70%;
+    height: 70%;
+
+    h2 {
+      height: 100%;
+      margin: 0;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      margin: auto;
+    }
+  }
+
+  .scroll {
+    position: absolute;
+    bottom: 60px;
+    right: 10px;
+    color: #fff;
+    transform: rotate(90deg);
+    transform-origin: right top;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 1px;
+      background: #fff;
+      right: 10px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      left: 130%;
+    }
+  }
+}
+
+.news_top {
+  background: $primary_color;
+  color: #fff;
+  width: 100%;
+  padding: 30px;
+  display: inline-block;
+  position: relative;
+  top: -40px;
+
+  p {
+    position: relative;
+    display: inline-block;
+
+    &:before {
+      @include arrow_before($secondary_color);
+    }
+
+    &:after {
+      @include arrow_after($secondary_color);
+    }
+  }
+}
+
+/* ------------------
+  Section Values
+  ------------------ */
+.block_world {
+  padding: 20px;
+  background: url(../assets/beyourself.svg) no-repeat right 80px;  
+}
+
+.block_fun {
+  padding: 20px;
+  background: url(../assets/funwork.svg) no-repeat right 80px;
+}
+
+.img_container {
+  position: relative;
+  min-height: 380px;
+  overflow: hidden;
+  background: url(../assets/value_1.jpg) no-repeat;
+  background-size: cover;
+  background-position: center; 
+  
+  .anim_img_mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $bg_color;
+  }
+}
+
+.img_container_sec {
+  background: url(../assets/value_2.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* ------------------
+  Section Career
+  ------------------ */
+.block_career {
+  padding: 20px;
+}
+
+.block_members {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // position: relative;
+}
+
+.member {
+  max-width: 230px;
+  height: 420px;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    filter: brightness(70%);
+    height: 100%;
+  }
+
+  .photo_back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  p {
+    position: absolute;
+    top: 0;
+    left: 30px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    transform: rotate(90deg);
+    transform-origin: left;
+    white-space: nowrap;
+
+    &:before {
+      @include arrow_before(#fff);
+    }
+
+    &:after {
+      @include arrow_after(#fff);
+    }
+  }
+
+  &:hover .photo_back {
+    opacity: 1; 
+  }
+}
+
+.slogan_mobile {
+  position: relative;
+  margin-top: -20px;
+
+  .st0 {
+  fill: none;
+  stroke: $secondary_color_3;
+  }
+}
+
+.slogan {
+  display: none;
+}
+
+/* ------------------
+  Section Work style
+  ------------------ */
+.sec_style {
+  padding: 20px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+
+  .card {
+    flex: 1 1 100%;
+    text-align: center;
+    padding: 20px;
+    margin: 15px;
+    box-shadow: 0 10px 20px #efefef;
+
+    .svg-icon {
+      display: block;
+      width: 140px;
+      margin: auto;
+      padding: 10px;
+    }
+  }
+}
+
+/* ------------------
+  Section News
+  ------------------ */
+.sec_news {
+  padding: 20px;
+  margin-bottom: 30px;
+
+  ul {
+    padding: 0;
+
+    li+li {
+      border-top: 1px solid $secondary_color_2;
+    }
+
+    a {
+      display: block;
+      margin: 10px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .date {
+      font-size: 0.9em;
+      font-weight: bold;
+      color: $primary_color_2;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .section {
+    margin-top: 100px;
+  }
+
+  .sec_top {
+    height: 90vh;
+  }
+
+  .news_top {
+    width: auto;
+    padding: 30px 60px;
+    overflow: visible;
+  }
+
+  .block_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    margin: 100px 0;
+
+
+    .block_world {
+      padding: 0 10% 0 20%;
+      background: url(../assets/beyourself.svg) no-repeat right top;
+      background-size: 60% auto;
+    }
+
+    .block_fun {
+      padding: 0 20% 0 10%;
+      order: 2;
+      background: url(../assets/funwork.svg) no-repeat 70% top;
+      background-size: 60% auto;
+    }
+  }
+
+  .img_value_fun{
+    order: 1;
+  }
+
+  .sec_career {
+    display: grid;
+    grid-template-columns: 30% auto;
+
+    .block_career {
+      padding: 0 5% 0 32%;
+    }
+  }
+
+  .member:nth-child(1) {
+    top: 100px;
+  }
+
+  .member:nth-child(2) {
+    top: 50px;
+  }
+
+  .slogan_mobile {
+    display: none;
+  }
+
+  .slogan {
+    display: block;
+    width: 100vw;
+    z-index: 2;
+    margin-top: 50px;
+
+    .st0 {
+    fill: none;
+    stroke: $secondary_color_3;
+    }
+  }
+
+  .sec_style,
+  .sec_news {
+    padding: 20px 10%;
+  }
+
+  .sec_news {
+    margin: 100px auto;
+  }
+
+  .cards {
+    flex-wrap: nowrap;
+  }
+}

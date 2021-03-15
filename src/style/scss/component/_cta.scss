@@ -1,0 +1,55 @@
+/* ------------------
+  Section CTA
+  ------------------ */
+.sec_cta {
+  background: $bg_color_gradient;
+  height: 300px;
+  width: 100%;
+  color: #fff;
+  position: relative;
+
+  .bg_cta {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $secondary_color;
+    transform: translateX(-100%);
+    transition: all 1s;
+  }
+
+  a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    h3 {
+      position: relative;
+      font-size: 1.5em;
+      margin: 0;
+    }
+
+    .view_btn_arrow {
+      width: 250px;
+      margin: 20px auto;
+      background: #fff;
+
+      &:before {
+        border: 1px solid #fff;
+      }
+
+      &:after {
+        border-top: 1px solid #fff;
+      }
+    }
+  }
+
+  &:hover .bg_cta {
+    transform: translateX(0);
+  }
+}

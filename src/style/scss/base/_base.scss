@@ -1,0 +1,47 @@
+@import 'variable';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: $text_color;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+main {
+  overflow-x: hidden;
+}
+
+h2 {
+  font-size: 2.6em;
+  line-height: 1.5em;
+}
+
+h3 {
+  font-size: 2.4em;
+  line-height: 1.5em;
+}
+
+p {
+  font-weight: 400;
+  line-height: 2.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}

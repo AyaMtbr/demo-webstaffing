@@ -1,0 +1,25 @@
+<section class="sec_top">
+  <h2>CAREERS AT<br>WEBSTAFFING</h2>
+</section>
+
+<section class="sec_summary">
+  <div class="title_container">
+    <div class="title_inner">
+      <div class="sub_title anim_text">
+        <div>CAREER</div>
+        <div class="position"><%= career.position %></div>
+        <div class="bio">
+          <p class="name"><strong><%= career.name %></strong></p>
+          <p><%= career.dept %></p>
+          <p><%= career.year %></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="img_container <%= career.img %>">
+      <span class="anim_img_mask"></span>
+    </div> 
+  </div>
+
+  <h3 class="title anim_text"><%= career.heading1 %><br>&emsp;&emsp;<%= career.heading2 %></h3>
+</section>

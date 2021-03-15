@@ -1,0 +1,102 @@
+.view_btn {
+  text-align: right;
+  margin: 20px;
+
+  a {
+    color: $secondary_color;
+    font-weight: bold;
+    text-align: right;
+    position: relative;
+
+    span {
+      margin-right: 30px;
+    }
+  }
+}
+
+.view_btn_arrow {
+  width: 100px;
+  height: 1px;
+  background: $secondary_color;
+  margin: auto 0 auto auto;
+  position: relative;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  &:before {
+    right: -20px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid $secondary_color;
+    border-radius: 50%;
+  }
+
+  &:after {
+    bottom: auto;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid $secondary_color;
+    transform: rotate(35deg);
+    transform-origin: top right;     
+  }
+}
+
+// spanタグにクラスをつけると円形のプレイボタンがつけられる
+// .play_btn_circle {
+//   width: 65px;
+//   height: 65px;
+//   border: 1px solid #fff;
+//   border-radius: 50%;
+//   position: absolute;
+//   bottom: 30px;
+//   left: 0;
+//   right: 0;
+//   margin: auto;
+
+//   &:after {
+//     content: "";
+//     width: 10px;
+//     height: 10px;
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     left: 23px;
+//     margin: auto;
+//     border-top: 2px solid #fff;
+//     border-right: 2px solid #fff;
+//     transform: rotate(45deg);
+//   }
+// }
+
+@mixin arrow_before($bg_color) {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0; 
+  left: 100%;
+  width: 100px;
+  height: 1px;
+  background: $bg_color;
+  margin: auto 20px;
+}
+
+@mixin arrow_after($border_color) {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0; 
+  left: calc(100% + 109px);
+  border-top: 1px solid $border_color;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  margin: auto; 
+}
