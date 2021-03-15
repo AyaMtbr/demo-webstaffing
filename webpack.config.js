@@ -14,7 +14,7 @@ const index = {
   },
   watch: true,
   plugins: [    
-    new HtmlWebpackPlugin({         // Generate member1.html
+    new HtmlWebpackPlugin({         // Generate index.html
       hash: true,
       template: './src/index.ejs',
       filename: './index.html',

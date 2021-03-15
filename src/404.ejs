@@ -5,10 +5,15 @@
 <% include ./templates/_menu %>
 
   <main>
-    <section>
-      <h2>404 Page Not Found</h2>
+    <section class="sec_top">
+      <div class="section_inner">
+        <h2>404 Page Not Found</h2>
+        <p>ご指定のページは、移動、または削除された可能性があります。URLをご確認のうえ再度アクセスをお願い致します。</p>
+      </div>
     </section>
 
+    <!-- CTA section -->
+    <% include ./templates/_cta %>
   </main>
 
   <% include ./templates/_footer %>

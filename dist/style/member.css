@@ -718,9 +718,7 @@ footer .copyright {
 .sec_top {
   width: 100%;
   height: 70vh;
-  background: url(../assets/member_top.jpg) no-repeat;
-  background-position: center;
-  background-size: cover;
+  background: url(../assets/member_top.jpg) center/cover no-repeat;
   position: relative;
   z-index: -1;
 }
