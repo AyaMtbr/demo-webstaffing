@@ -46,14 +46,17 @@ function closeNav() {
 }
 
 /*=======================================
-  scroll(): Scroll to the id section when a menu is clicked
+  scroll(): Scroll to the id section
 =========================================*/
 function scroll(hash) {
-  // If the url contains a hashtag
-  if(hash){
-    const HashOffset = $(hash).offset().top - 50;
+  const destination = document.querySelector(hash);
+
+  // If the hash section exists in the current page
+  if (destination) {
+    const hashOffset = destination.offsetTop - 50;
+
     jQuery("html,body").animate({
-      scrollTop: HashOffset
+      scrollTop: hashOffset
     }, 500);
   };
 };
@@ -61,8 +64,13 @@ function scroll(hash) {
 /*=======================================
   Initialize the settings
 =========================================*/
+// Scroll to the section if the page URL has a hash
+if(hash) {
+  scroll(hash);
+};
+
+// Set the nav bar
 openNav();
-scroll(hash);
 
 //  Scroll to the section when a menu link is clicked
 menuItem.forEach(item => {

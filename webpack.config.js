@@ -3,10 +3,11 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const FixStyleOnlyEntries = require("webpack-fix-style-only-entries");
 const webpack = require("webpack");
 const path = require("path");
+const mode = 'development';
 
 // Index page
 const index = {
-  mode: "production",
+  mode: mode,
   entry: {
     index: "./src/scripts/index.js",
     "index.css": "./src/style/scss/index.scss",
@@ -76,7 +77,7 @@ const index = {
 
 // Member page
 const member = {
-  mode: "production",
+  mode: mode,
   entry: {
     member: "./src/scripts/member.js",
     "member.css": "./src/style/scss/member.scss",
@@ -158,7 +159,7 @@ const member = {
 
 // 404 page
 const notFound = {
-  mode: "production",
+  mode: mode,
   entry: {
     404: "./src/scripts/common/app.js",
     "404.css": "./src/style/scss/404.scss",
