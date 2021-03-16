@@ -111,6 +111,10 @@ const member = {
     new FixStyleOnlyEntries(),      // Remove unnecessary empty js files (member.css.bundle.js)
     new MiniCssExtractPlugin({
       filename: "./style/[name]"
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
     })
   ],
   module: {
@@ -177,6 +181,10 @@ const notFound = {
     new FixStyleOnlyEntries(),      // Remove unnecessary empty js files (404.css.bundle.js)
     new MiniCssExtractPlugin({
       filename: "./style/[name]"
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
     })
   ],
   module: {
