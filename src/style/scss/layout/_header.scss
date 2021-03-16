@@ -1,3 +1,5 @@
+@import '../base/variable';
+
 .header {
   position: absolute;
   top: 0;
@@ -28,8 +30,10 @@
 .menu_toggle_btn {
   width: 35px;
   height: 20px;
-  position: relative;
+  position: fixed;
+  right: 20px;
   z-index: 101;
+  color: #fff;
 
   &:hover {
     cursor: pointer;
@@ -57,6 +61,13 @@
     }
   }
 
+  &:after {
+    content: 'MENU';
+    position: absolute;
+    bottom: -25px;
+    font-size: 0.8em;
+  }
+
   /* Open the hamburger menu */
   &.active span:nth-child(1) {
     animation: openNavTop 1s forwards;
@@ -68,6 +79,14 @@
 
   &.active span:nth-child(3) {
     animation: openNavBottom 1s forwards;
+  }
+}
+
+.menu_toggle_btn.scrolled {
+  color: $secondary_color;
+
+  span {
+    background: $secondary_color;
   }
 }
 

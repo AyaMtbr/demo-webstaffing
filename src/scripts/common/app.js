@@ -74,3 +74,11 @@ menuItem.forEach(item => {
     closeMenuModal();
   });
 });
+
+// Change the hamburger menu colour on scroll
+ScrollTrigger.create({
+  trigger: ".sec_top",
+  start: "bottom 10%",
+  end: 99999,
+  toggleClass: {targets: ".menu_toggle_btn", className: "scrolled"},
+});

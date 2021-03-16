@@ -412,8 +412,10 @@ ul {
 .menu_toggle_btn {
   width: 35px;
   height: 20px;
-  position: relative;
+  position: fixed;
+  right: 20px;
   z-index: 101;
+  color: #fff;
   /* Open the hamburger menu */
 }
 .menu_toggle_btn:hover {
@@ -437,6 +439,12 @@ ul {
   bottom: 0;
   animation: closeNavBottom 1s forwards;
 }
+.menu_toggle_btn:after {
+  content: "MENU";
+  position: absolute;
+  bottom: -25px;
+  font-size: 0.8em;
+}
 .menu_toggle_btn.active span:nth-child(1) {
   animation: openNavTop 1s forwards;
 }
@@ -445,6 +453,13 @@ ul {
 }
 .menu_toggle_btn.active span:nth-child(3) {
   animation: openNavBottom 1s forwards;
+}
+
+.menu_toggle_btn.scrolled {
+  color: #0187d9;
+}
+.menu_toggle_btn.scrolled span {
+  background: #0187d9;
 }
 
 @keyframes closeNavTop {
@@ -899,13 +914,30 @@ footer .copyright {
 }
 .slogan_mobile .st0 {
   fill: none;
-  stroke: #9ad9ff;
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 0;
+  stroke-width: 1;
 }
 
 .slogan {
   display: none;
 }
 
+.anim_color.active .st0 {
+  stroke: #9ad9ff;
+  animation: revealSlogan 4s ease-in forwards;
+}
+
+@keyframes revealSlogan {
+  0% {
+    stroke-dashoffset: 2000;
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+  }
+}
 /* ------------------
   Section Work style
   ------------------ */
@@ -1022,7 +1054,9 @@ footer .copyright {
   }
   .slogan .st0 {
     fill: none;
-    stroke: #9ad9ff;
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 0;
+    stroke-width: 1;
   }
 
   .sec_style,

@@ -412,8 +412,10 @@ ul {
 .menu_toggle_btn {
   width: 35px;
   height: 20px;
-  position: relative;
+  position: fixed;
+  right: 20px;
   z-index: 101;
+  color: #fff;
   /* Open the hamburger menu */
 }
 .menu_toggle_btn:hover {
@@ -437,6 +439,12 @@ ul {
   bottom: 0;
   animation: closeNavBottom 1s forwards;
 }
+.menu_toggle_btn:after {
+  content: "MENU";
+  position: absolute;
+  bottom: -25px;
+  font-size: 0.8em;
+}
 .menu_toggle_btn.active span:nth-child(1) {
   animation: openNavTop 1s forwards;
 }
@@ -445,6 +453,13 @@ ul {
 }
 .menu_toggle_btn.active span:nth-child(3) {
   animation: openNavBottom 1s forwards;
+}
+
+.menu_toggle_btn.scrolled {
+  color: #0187d9;
+}
+.menu_toggle_btn.scrolled span {
+  background: #0187d9;
 }
 
 @keyframes closeNavTop {

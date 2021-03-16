@@ -16,12 +16,12 @@ const index = {
   plugins: [    
     new HtmlWebpackPlugin({         // Generate index.html
       hash: true,
-      template: './src/index.ejs',
-      filename: './index.html',
+      template: "./src/index.ejs",
+      filename: "./index.html",
       meta: {description: 'WEBSTAFFINGは、グローバルに展開するWeb制作集団です。'}
     }),
     new MiniCssExtractPlugin({      // Output styles into an external CSS file (index.css)
-      filename: './style/[name]',
+      filename: "./style/[name]",
     }),
     new FixStyleOnlyEntries(),      // Remove unnecessary empty js files (index.css.bundle.js)
     new MiniCssExtractPlugin({
@@ -81,24 +81,24 @@ const member = {
   plugins: [    
     new HtmlWebpackPlugin({         // Generate member1.html
       hash: true,
-      template: './src/member1.ejs',
-      filename: './member1.html',
+      template: "./src/member1.ejs",
+      filename: "./member1.html",
       meta: {description: 'Webディレクター - WEBSTAFFINGのキャリアパス'},
     }),
     new HtmlWebpackPlugin({         // Generate member2.html
       hash: true,
-      template: './src/member2.ejs',
-      filename: './member2.html',
+      template: "./src/member2.ejs",
+      filename: "./member2.html",
       meta: {description: 'マーケティングスペシャリスト - WEBSTAFFINGのキャリアパス'},
     }),
     new HtmlWebpackPlugin({         // Generate member3.html
       hash: true,
-      template: './src/member3.ejs',
-      filename: './member3.html',
+      template: "./src/member3.ejs",
+      filename: "./member3.html",
       meta: {description: 'フロントエンドエンジニア - WEBSTAFFINGのキャリアパス'},
     }),
     new MiniCssExtractPlugin({      // Output styles into an external CSS file (member.css)
-      filename: './style/[name]',
+      filename: "./style/[name]",
     }),
     new FixStyleOnlyEntries(),      // Remove unnecessary empty js files (member.css.bundle.js)
     new MiniCssExtractPlugin({
@@ -158,12 +158,12 @@ const notFound = {
   plugins: [    
     new HtmlWebpackPlugin({         // Generate 404.html
       hash: true,
-      template: './src/404.ejs',
-      filename: './404.html',
+      template: "./src/404.ejs",
+      filename: "./404.html",
       meta: {description: 'WEBSTAFFINGは、グローバルに展開するWeb制作集団です。'}
     }),
     new MiniCssExtractPlugin({      // Output styles into an external CSS file (404.css)
-      filename: './style/[name]',
+      filename: "./style/[name]",
     }),
     new FixStyleOnlyEntries(),      // Remove unnecessary empty js files (404.css.bundle.js)
     new MiniCssExtractPlugin({

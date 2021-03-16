@@ -206,13 +206,25 @@
   margin-top: -20px;
 
   .st0 {
-  fill: none;
-  stroke: $secondary_color_3;
+    fill: none;
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 0;
+    stroke-width: 1;
   }
 }
 
 .slogan {
   display: none;
+}
+
+.anim_color.active .st0 {
+  stroke: $secondary_color_3;
+  animation: revealSlogan 4s ease-in forwards;
+}
+
+@keyframes revealSlogan {
+  0% {stroke-dashoffset: 2000; fill:transparent;}
+  100% {stroke-dashoffset: 0; fill:transparent;}
 }
 
 /* ------------------
@@ -342,7 +354,9 @@
 
     .st0 {
     fill: none;
-    stroke: $secondary_color_3;
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 0;
+    stroke-width: 1;
     }
   }
 
