@@ -1,16 +1,19 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const FixStyleOnlyEntries = require("webpack-fix-style-only-entries");
+const webpack = require("webpack");
+const path = require("path");
 
 // Index page
 const index = {
-  mode: "development",  //公開時にはproductionに設定する
+  mode: "production",
   entry: {
     index: "./src/scripts/index.js",
     "index.css": "./src/style/scss/index.scss",
     },
   output: {
-    filename: "js/[name].bundle.js",  // [name] inherits it's entry name
+    filename: "./js/[name].bundle.js",  // [name] inherits it's entry name
+    path: path.resolve(__dirname, './'),
   },
   watch: true,
   plugins: [    
@@ -26,6 +29,10 @@ const index = {
     new FixStyleOnlyEntries(),      // Remove unnecessary empty js files (index.css.bundle.js)
     new MiniCssExtractPlugin({
       filename: "./style/[name]"
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
     })
   ],
   module: {
@@ -69,13 +76,14 @@ const index = {
 
 // Member page
 const member = {
-  mode: "development",  //公開時にはproductionに設定する
+  mode: "production",
   entry: {
     member: "./src/scripts/member.js",
     "member.css": "./src/style/scss/member.scss",
     },
   output: {
-    filename: "js/[name].bundle.js",  // [name] inherits it's entry name
+    filename: "./js/[name].bundle.js",  // [name] inherits it's entry name
+    path: path.resolve(__dirname, './'),
   },
   watch: true,
   plugins: [    
@@ -146,13 +154,14 @@ const member = {
 
 // 404 page
 const notFound = {
-  mode: "development",  //公開時にはproductionに設定する
+  mode: "production",
   entry: {
     404: "./src/scripts/common/app.js",
     "404.css": "./src/style/scss/404.scss",
     },
   output: {
-    filename: "js/[name].bundle.js",  // [name] inherits it's entry name
+    filename: "./js/[name].bundle.js",  // [name] inherits it's entry name
+    path: path.resolve(__dirname, './'),
   },
   watch: true,
   plugins: [    

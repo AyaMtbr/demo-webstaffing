@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "watch": "webpack --watch",
-    "start": "webpack ./src/scripts/app.js ./dist/app.bundle.js --mode=development"
+    "start": "webpack ./src/scripts/app.js ./app.bundle.js --mode=development"
   },
   "author": "Aya Matsubara",
   "license": "ISC",
