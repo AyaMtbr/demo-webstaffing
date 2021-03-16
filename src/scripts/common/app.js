@@ -48,7 +48,7 @@ function closeNav() {
 /*=======================================
   scroll(): Scroll to the id section
 =========================================*/
-function scroll(hash) {
+function scroll(hash, event) {
   const destination = document.querySelector(hash);
 
   // If the hash section exists in the current page
@@ -64,29 +64,31 @@ function scroll(hash) {
 /*=======================================
   Initialize the settings
 =========================================*/
-// Scroll to the section if the page URL has a hash
-if(hash) {
-  scroll(hash);
-};
-
-// Set the nav bar
-openNav();
-
-//  Scroll to the section when a menu link is clicked
-menuItem.forEach(item => {
-  item.addEventListener("click", event => {
-    var urlId = item.getAttribute("href").split("#");
-    hash = "#" + urlId[1];
-
+window.addEventListener('load', () => {
+  // Scroll to the section if the page URL has a hash
+  if(hash) {
     scroll(hash);
-    closeMenuModal();
-  });
-});
+  };
 
-// Change the hamburger menu colour on scroll
-ScrollTrigger.create({
-  trigger: ".sec_top",
-  start: "bottom 10%",
-  end: 99999,
-  toggleClass: {targets: ".menu_toggle_btn", className: "scrolled"},
+  // Set the nav bar
+  openNav();
+
+  //  Scroll to the section when a menu link is clicked
+  menuItem.forEach(item => {
+    item.addEventListener("click", event => {
+      var urlId = item.getAttribute("href").split("#");
+      hash = "#" + urlId[1];
+
+      scroll(hash);
+      closeMenuModal();
+    });
+  });
+
+  // Change the hamburger menu colour on scroll
+  ScrollTrigger.create({
+    trigger: ".sec_top",
+    start: "bottom 10%",
+    end: 99999,
+    toggleClass: {targets: ".menu_toggle_btn", className: "scrolled"},
+  });
 });
