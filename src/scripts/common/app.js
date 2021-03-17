@@ -49,8 +49,11 @@ function closeNav() {
   scroll(): Scroll to the id section
 =========================================*/
 function scroll(hash) {
-
   if(hash) {
+    $("html,body").animate({
+        scrollTop: 0
+    }, 1);
+
     const destination = document.querySelector(hash);
 
     // If the hash section exists in the current page
@@ -69,7 +72,7 @@ function scroll(hash) {
 =========================================*/
 window.addEventListener('DOMContentLoaded', () => {
   // Scroll to the section if the page URL has a hash
-  // scroll(hash);
+  scroll(hash);
 
   // Set the nav bar
   openNav();
