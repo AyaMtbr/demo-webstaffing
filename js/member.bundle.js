@@ -47,7 +47,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _common_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./common/app */ \"./src/scripts/common/app.js\");\n/* harmony import */ var _common_app__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_common_app__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _common_scroll_anime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./common/scroll_anime */ \"./src/scripts/common/scroll_anime.js\");\n\n\n\n// Scroll animations\n(0,_common_scroll_anime__WEBPACK_IMPORTED_MODULE_1__.revealText)();\n(0,_common_scroll_anime__WEBPACK_IMPORTED_MODULE_1__.revealImage)();\n\n\n//# sourceURL=webpack://webstaffing_demo/./src/scripts/member.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _common_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./common/app */ \"./src/scripts/common/app.js\");\n/* harmony import */ var _common_app__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_common_app__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _common_scroll_anime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./common/scroll_anime */ \"./src/scripts/common/scroll_anime.js\");\n\n\n\nwindow.addEventListener('load', () => {\n  // Scroll animations\n  (0,_common_scroll_anime__WEBPACK_IMPORTED_MODULE_1__.revealText)();\n  (0,_common_scroll_anime__WEBPACK_IMPORTED_MODULE_1__.revealImage)();\n});\n\n\n//# sourceURL=webpack://webstaffing_demo/./src/scripts/member.js?");
 
 /***/ })
 
