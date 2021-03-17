@@ -11,6 +11,7 @@ export function revealText () {
         trigger: section,
         start: "top bottom",
         animation: anim,
+        invalidateOnRefresh: true
         }
     );
   });
@@ -29,6 +30,7 @@ export function revealImage () {
         trigger: section,
         start: "top bottom",
         animation: anim,
+        invalidateOnRefresh: true
         }
     );
   });
@@ -43,5 +45,6 @@ export function animateSlogan() {
     start: "top center",
     end: 99999,
     toggleClass: {targets: ".anim_color", className: "active"},
+    invalidateOnRefresh: true
   });
 }
