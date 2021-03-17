@@ -66,7 +66,7 @@ function scroll(hash) {
 /*=======================================
   Initialize the settings
 =========================================*/
-window.addEventListener('load', () => {
+window.addEventListener('DOMContentLoaded', () => {
   // Scroll to the section if the page URL has a hash
   scroll(hash);
 

@@ -9,7 +9,7 @@ export function revealText () {
 
       ScrollTrigger.create ({
         trigger: section,
-        start: "top 90%",
+        start: "top bottom",
         animation: anim,
         }
     );
@@ -27,7 +27,7 @@ export function revealImage () {
 
       ScrollTrigger.create ({
         trigger: section,
-        start: "top 80%",
+        start: "top bottom",
         animation: anim,
         }
     );
