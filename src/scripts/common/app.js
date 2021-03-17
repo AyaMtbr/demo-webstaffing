@@ -49,30 +49,29 @@ function closeNav() {
   scroll(): Scroll to the id section
 =========================================*/
 function scroll(hash) {
-  if(hash) {
+
+  const destination = document.getElementById(hash);
+
+  // If the hash section exists in the current page
+  if (destination) {
+    const hashOffset = destination.offsetTop - 50;
+
     $("html,body").animate({
-        scrollTop: 0
-    }, 1);
-
-    const destination = document.querySelector(hash);
-
-    // If the hash section exists in the current page
-    if (destination) {
-      const hashOffset = destination.offsetTop - 50;
-
-      $("html,body").animate({
-        scrollTop: hashOffset
-      }, 500);
-    };
-  }
+      scrollTop: hashOffset
+    }, 500);
+  };
 };
 
 /*=======================================
   Initialize the settings
 =========================================*/
 window.addEventListener('DOMContentLoaded', () => {
-  // Scroll to the section if the page URL has a hash
-  scroll(hash);
+  if (hash) {
+    hash = hash.replace('#', '');
+  
+    // Scroll to the section if the page URL has a hash
+    scroll(hash);
+  }
 
   // Set the nav bar
   openNav();
@@ -80,11 +79,19 @@ window.addEventListener('DOMContentLoaded', () => {
   //  Scroll to the section when a menu link is clicked
   menuItem.forEach(item => {
     item.addEventListener("click", event => {
-      var urlId = item.getAttribute("href").split("#");
-      hash = "#" + urlId[1];
+      const url = item.getAttribute("href").split("#");
+      const hash = url[1];
 
       closeMenuModal();
-      scroll(hash);
+
+      const destination = document.getElementById(hash);
+
+      // If the hash section exists in the current page
+      if (destination) {
+        scroll(hash);
+      } else {
+        window.location.reload();
+      };
     });
   });
 
