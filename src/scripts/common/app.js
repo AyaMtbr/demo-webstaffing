@@ -90,7 +90,8 @@ window.addEventListener('DOMContentLoaded', () => {
       if (destination) {
         scroll(hash);
       } else {
-        window.location.reload();
+        event.preventDefault();
+        window.location.href = item;
       };
     });
   });
