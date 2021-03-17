@@ -42,7 +42,6 @@ export function animateSlogan() {
     trigger: ".block_members",
     start: "top center",
     end: 99999,
-    scrub: true,
     toggleClass: {targets: ".anim_color", className: "active"},
   });
 }

@@ -48,17 +48,19 @@ function closeNav() {
 /*=======================================
   scroll(): Scroll to the id section
 =========================================*/
-function scroll(hash, event) {
-  const destination = document.querySelector(hash);
+function scroll(hash) {
+  if(hash) {
+    const destination = document.querySelector(hash);
 
-  // If the hash section exists in the current page
-  if (destination) {
-    const hashOffset = destination.offsetTop - 50;
+    // If the hash section exists in the current page
+    if (destination) {
+      const hashOffset = destination.offsetTop - 50;
 
-    jQuery("html,body").animate({
-      scrollTop: hashOffset
-    }, 500);
-  };
+      $("html,body").animate({
+        scrollTop: hashOffset
+      }, 500);
+    };
+  }
 };
 
 /*=======================================
@@ -66,9 +68,7 @@ function scroll(hash, event) {
 =========================================*/
 window.addEventListener('load', () => {
   // Scroll to the section if the page URL has a hash
-  if(hash) {
-    scroll(hash);
-  };
+  scroll(hash);
 
   // Set the nav bar
   openNav();
@@ -79,8 +79,8 @@ window.addEventListener('load', () => {
       var urlId = item.getAttribute("href").split("#");
       hash = "#" + urlId[1];
 
-      scroll(hash);
       closeMenuModal();
+      scroll(hash);
     });
   });
 
