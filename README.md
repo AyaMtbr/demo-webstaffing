@@ -5,4 +5,4 @@ Responsive site example built with:
 - Webpack
 - Pure JavaScript
 
-Demo: https://github.com/AyaMtbr/demo-webstaffing
+Demo: https://ayamtbr.github.io/demo-webstaffing/
