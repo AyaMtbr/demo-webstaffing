@@ -48,7 +48,8 @@ function closeNav() {
 /*=======================================
   Initialize the settings
 =========================================*/
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
+  // window.location.reload(true);
   setTimeout(function () {
     document.body.classList.remove('slide_in');
   }, 1);
@@ -56,7 +57,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // Set the nav bar
   openNav();
 
-  //  Scroll to the section when a menu link is clicked
+  // Scroll to the section when a menu link is clicked
   menuItem.forEach(item => {
     item.addEventListener("click", event => {
       event.preventDefault();
