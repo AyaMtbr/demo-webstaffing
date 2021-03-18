@@ -55,7 +55,7 @@ window.addEventListener('load', () => {
   // Set the nav bar
   openNav();
 
-  // Scroll to the section when a menu link is clicked
+  // Add animations to the menu links
   menuItem.forEach(item => {
     item.addEventListener("click", event => {
       event.preventDefault();
