@@ -46,32 +46,12 @@ function closeNav() {
 }
 
 /*=======================================
-  scroll(): Scroll to the id section
-=========================================*/
-function scroll(hash) {
-
-  const destination = document.getElementById(hash);
-
-  // If the hash section exists in the current page
-  if (destination) {
-    const hashOffset = destination.offsetTop - 50;
-
-    $("html,body").animate({
-      scrollTop: hashOffset
-    }, 500);
-  };
-};
-
-/*=======================================
   Initialize the settings
 =========================================*/
 window.addEventListener('DOMContentLoaded', () => {
-  if (hash) {
-    hash = hash.replace('#', '');
-  
-    // Scroll to the section if the page URL has a hash
-    scroll(hash);
-  }
+  setTimeout(function () {
+    document.body.classList.remove('slide_in');
+  }, 1);
 
   // Set the nav bar
   openNav();
@@ -79,8 +59,9 @@ window.addEventListener('DOMContentLoaded', () => {
   //  Scroll to the section when a menu link is clicked
   menuItem.forEach(item => {
     item.addEventListener("click", event => {
-      const url = item.getAttribute("href").split("#");
-      const hash = url[1];
+      event.preventDefault();
+      const url = item.getAttribute("href");
+      const hash = url.split("#")[1];
 
       closeMenuModal();
 
@@ -88,10 +69,17 @@ window.addEventListener('DOMContentLoaded', () => {
 
       // If the hash section exists in the current page
       if (destination) {
-        scroll(hash);
+        const hashOffset = destination.offsetTop - 50;
+
+        $("html,body").animate({
+          scrollTop: hashOffset
+        }, 500);
+      // If the hash section exists in other page
       } else {
-        event.preventDefault();
-        window.location.href = item;
+        document.body.classList.add('slide_in');
+        setTimeout(function () {
+          window.location = url;
+        }, 700);
       };
     });
   });

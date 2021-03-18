@@ -648,6 +648,27 @@ footer .copyright {
   transform-origin: top right;
 }
 
+#slide_anime:after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background: linear-gradient(45deg, #0187d9, #01b8d9);
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#slide_anime.slide_in:after {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* ------------------
   Section CTA
   ------------------ */
