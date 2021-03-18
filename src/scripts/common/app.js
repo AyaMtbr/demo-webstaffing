@@ -1,55 +1,53 @@
-const menuItem = document.querySelectorAll(".menu_item");
-const modalMenu = document.querySelector(".menu_mobile");
-let hash = window.location.hash;
-
-/*=======================================
-  openNav(): Open the nav on mbile view
-=========================================*/
-function openNav() {
-  const toggleBtn = document.querySelector(".menu_toggle_btn");
-
-  toggleBtn.addEventListener("click", () => {
-    toggleBtn.classList.add("active");
-    modalMenu.classList.add("opened");
-
-    closeNav();
-  })
-};
-
-/*=======================================
-  closeMenuModal(): Close the menu modal on mbile view
-=========================================*/
-function closeMenuModal() {
-  const toggleBtn = document.querySelector(".menu_toggle_btn");
-  const toggleBtnClass = toggleBtn.getAttribute("class").split(' ');
-  const lastClassName = toggleBtnClass[toggleBtnClass.length -1];
-
-  // If the modal menu is open
-  if (lastClassName === "active" ) {
-    toggleBtn.classList.remove("active");
-    modalMenu.classList.remove("opened");
-
-    openNav();
-  };
-};
-
-/*=======================================
-  closeNav(): Close the menu on mbile view
-=========================================*/
-function closeNav() {
-  const toggleBtn = document.querySelector(".menu_toggle_btn.active");
-
-  // Close the modal when the hamburger is clicked
-  toggleBtn.addEventListener("click", () => {
-    closeMenuModal();
-  });
-}
-
-/*=======================================
-  Initialize the settings
-=========================================*/
 window.addEventListener('load', () => {
-  // window.location.reload(true);
+  const menuItem = document.querySelectorAll(".menu_item");
+  const modalMenu = document.querySelector(".menu_mobile");
+
+  /*=======================================
+    openNav(): Open the nav on mbile view
+  =========================================*/
+  function openNav() {
+    const toggleBtn = document.querySelector(".menu_toggle_btn");
+
+    toggleBtn.addEventListener("click", () => {
+      toggleBtn.classList.add("active");
+      modalMenu.classList.add("opened");
+
+      closeNav();
+    })
+  };
+
+  /*=======================================
+    closeMenuModal(): Close the menu modal on mbile view
+  =========================================*/
+  function closeMenuModal() {
+    const toggleBtn = document.querySelector(".menu_toggle_btn");
+    const toggleBtnClass = toggleBtn.getAttribute("class").split(' ');
+    const lastClassName = toggleBtnClass[toggleBtnClass.length -1];
+
+    // If the modal menu is open
+    if (lastClassName === "active" ) {
+      toggleBtn.classList.remove("active");
+      modalMenu.classList.remove("opened");
+
+      openNav();
+    };
+  };
+
+  /*=======================================
+    closeNav(): Close the menu on mbile view
+  =========================================*/
+  function closeNav() {
+    const toggleBtn = document.querySelector(".menu_toggle_btn.active");
+
+    // Close the modal when the hamburger is clicked
+    toggleBtn.addEventListener("click", () => {
+      closeMenuModal();
+    });
+  }
+
+  /*=======================================
+    Initialize the settings
+  =========================================*/
   setTimeout(function () {
     document.body.classList.remove('slide_in');
   }, 1);

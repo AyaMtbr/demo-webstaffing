@@ -1,9 +1,10 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const FixStyleOnlyEntries = require("webpack-fix-style-only-entries");
+const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require("webpack");
 const path = require("path");
-const mode = 'development';
+const mode = 'production';
 
 // Index page
 const index = {
@@ -34,6 +35,9 @@ const index = {
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
+    }),
+    new TerserPlugin({              // Prevent creation of LISENCE.txt on production mode
+      extractComments: false
     })
   ],
   module: {
@@ -116,6 +120,9 @@ const member = {
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
+    }),
+    new TerserPlugin({              // Prevent creation of LISENCE.txt on production mode
+      extractComments: false
     })
   ],
   module: {
@@ -186,6 +193,9 @@ const notFound = {
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
+    }),
+    new TerserPlugin({              // Prevent creation of LISENCE.txt on production mode
+      extractComments: false
     })
   ],
   module: {
