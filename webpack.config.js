@@ -2,7 +2,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const FixStyleOnlyEntries = require("webpack-fix-style-only-entries");
 const TerserPlugin = require('terser-webpack-plugin');
-const webpack = require("webpack");
 const path = require("path");
 const mode = 'production';
 
@@ -31,10 +30,6 @@ const index = {
     new FixStyleOnlyEntries(),      // Remove unnecessary empty js files (index.css.bundle.js)
     new MiniCssExtractPlugin({
       filename: "./style/[name]"
-    }),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery'
     }),
     new TerserPlugin({              // Prevent creation of LISENCE.txt on production mode
       extractComments: false
@@ -117,10 +112,6 @@ const member = {
     new MiniCssExtractPlugin({
       filename: "./style/[name]"
     }),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery'
-    }),
     new TerserPlugin({              // Prevent creation of LISENCE.txt on production mode
       extractComments: false
     })
@@ -189,10 +180,6 @@ const notFound = {
     new FixStyleOnlyEntries(),      // Remove unnecessary empty js files (404.css.bundle.js)
     new MiniCssExtractPlugin({
       filename: "./style/[name]"
-    }),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery'
     }),
     new TerserPlugin({              // Prevent creation of LISENCE.txt on production mode
       extractComments: false

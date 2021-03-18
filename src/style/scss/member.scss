@@ -9,8 +9,8 @@
 /* ------------------
   Common style
   ------------------ */
-.section {
-  margin-top: 30px;
+.section + .section:not(.sec_cta) {
+  padding-top: 50px;
 
   h3 {
     margin: 10px auto 20px;

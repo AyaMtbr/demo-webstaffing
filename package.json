@@ -27,8 +27,5 @@
     "webpack": "^5.24.3",
     "webpack-cli": "^4.5.0",
     "webpack-fix-style-only-entries": "^0.6.1"
-  },
-  "dependencies": {
-    "jquery": "^3.5.1"
   }
 }

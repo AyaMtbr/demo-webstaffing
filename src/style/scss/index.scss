@@ -9,8 +9,8 @@
 /* ------------------
   Common style
   ------------------ */
-.section {
-  margin-top: 30px;
+.section:not(.sec_value, .sec_cta) {
+  padding-top: 50px;
 
   h3 {
     margin: 10px auto 20px;
@@ -286,8 +286,8 @@
 }
 
 @media (min-width: 768px) {
-  .section {
-    margin-top: 100px;
+  .section + .section {
+    margin-top: 50px;
   }
 
   .sec_top {

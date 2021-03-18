@@ -61,18 +61,18 @@ window.addEventListener('load', () => {
       event.preventDefault();
       const url = item.getAttribute("href");
       const hash = url.split("#")[1];
+      const destination = document.getElementById(hash);
 
       closeMenuModal();
 
-      const destination = document.getElementById(hash);
-
       // If the hash section exists in the current page
       if (destination) {
-        const hashOffset = destination.offsetTop - 50;
+        const hashOffset = destination.offsetTop;
 
-        $("html,body").animate({
-          scrollTop: hashOffset
-        }, 500);
+        window.scrollTo({
+          top: hashOffset,
+          behavior: "smooth"
+        })
       // If the hash section exists in other page
       } else {
         document.body.classList.add('slide_in');
