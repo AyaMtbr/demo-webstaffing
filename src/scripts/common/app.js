@@ -51,8 +51,8 @@ window.addEventListener('load', () => {
     Initialize the settings
   =========================================*/
   setTimeout(function () {
-    document.body.classList.remove('slide_in');
-  }, 1);
+    document.body.classList.remove('fade_in');
+  }, 500);
 
   // Set the nav bar
   openNav();
@@ -77,10 +77,10 @@ window.addEventListener('load', () => {
         })
       // If the hash section exists in other page
       } else {
-        document.body.classList.add('slide_in');
+        document.body.classList.add('fade_in');
         setTimeout(function () {
           window.location = url;
-        }, 700);
+        }, 500);
       };
     });
   });

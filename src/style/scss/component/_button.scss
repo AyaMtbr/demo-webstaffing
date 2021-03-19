@@ -53,25 +53,141 @@
     display: none;
   }
 
-#slide_anime:after {
-  content: '';
+#fade_anime .transition_bg {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100%;
   background: $bg_color_gradient;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 9999;
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+  .circle_spinner {
+    height: 60px;
+    width: 60px;
+    position: relative;
+    animation: circle_spinner_anime infinite 4000ms ease;
+
+    .orbit {
+      height: 60px;
+      width: 60px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      border: calc(60px * 0.03) solid $secondary_color_3;
+      animation: circle_spinner_orbit_anime infinite 4000ms ease;
+    }
+
+    .circle {
+      height: 60px;
+      width: 60px;
+      color: $secondary_color_3;
+      display: block;
+      border-radius: 50%;
+      position: relative;
+      border: calc(60px * 0.1) solid $secondary_color_3;
+      animation: circle_spinner_circle_anime infinite 4000ms ease;
+      transform: rotate(0deg) scale(1);
+    }
+  }
 }
 
-#slide_anime.slide_in:after {
+#fade_anime.fade_in .transition_bg {
   opacity: 1;
   visibility: visible;
+}
+
+@keyframes circle_spinner_anime {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes circle_spinner_orbit_anime {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  62.5% {
+    transform: scale(0.8);
+  }
+
+  75% {
+    transform: scale(1);
+  }
+
+  87.5% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes circle_spinner_circle_anime {
+  0% {
+    transform: scale(1);
+    border-color: transparent;
+    border-top-color: inherit;
+  }
+
+  16.7% {
+    border-color: transparent;
+    border-top-color: initial;
+    border-right-color: initial;
+  }
+
+  33.4% {
+    border-color: transparent;
+    border-top-color: inherit;
+    border-right-color: inherit;
+    border-bottom-color: inherit;
+  }
+
+  50% {
+    border-color: inherit;
+    transform: scale(1);
+  }
+
+  62.5% {
+    border-color: inherit;
+    transform: scale(1.4);
+  }
+
+  75% {
+    border-color: inherit;
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  87.5% {
+    border-color: inherit;
+    transform: scale(1.4);
+  }
+
+  100% {
+    border-color: transparent;
+    border-top-color: inherit;
+    transform: scale(1);
+  }
 }
 
 @mixin arrow_before($bg_color) {
@@ -114,9 +230,9 @@
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 
     span {
+      display: block;
       width: 20px;
       height: 20px;
-      display: block;
       border-top: 2px solid #fff;
       border-left: 2px solid #fff;
       transform: rotate(45deg);
