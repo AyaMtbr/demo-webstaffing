@@ -9,7 +9,7 @@
 /* ------------------
   Common style
   ------------------ */
-.section:not(.sec_value, .sec_cta) {
+.section:not(.sec_cta) {
   padding-top: 50px;
 
   h3 {
@@ -90,7 +90,7 @@
   padding: 30px;
   display: inline-block;
   position: relative;
-  top: -40px;
+  margin-top: -40px;
 
   p {
     position: relative;
@@ -324,6 +324,10 @@
   .img_value_fun{
     order: 1;
   }
+
+  .section.sec_value {
+    padding-top: 20px;
+}
 
   .sec_career {
     display: grid;

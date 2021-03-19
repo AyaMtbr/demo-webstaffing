@@ -680,6 +680,10 @@ footer .copyright {
   transform-origin: top right;
 }
 
+.up_btn {
+  display: none;
+}
+
 #slide_anime:after {
   content: "";
   position: fixed;
@@ -701,6 +705,32 @@ footer .copyright {
   visibility: visible;
 }
 
+@media (min-width: 768px) {
+  .up_btn {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 25px 20px 15px;
+    background: linear-gradient(45deg, #0187d9, #01b8d9);
+    cursor: pointer;
+    z-index: 10;
+    transform: translateY(100%);
+    -webkit-transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .up_btn span {
+    width: 20px;
+    height: 20px;
+    display: block;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    transform: rotate(45deg);
+  }
+  .up_btn.scrolled {
+    transform: translateY(0);
+  }
+}
 /* ------------------
   Section CTA
   ------------------ */
@@ -754,10 +784,10 @@ footer .copyright {
 /* ------------------
   Common style
   ------------------ */
-.section:not(.sec_value, .sec_cta) {
+.section:not(.sec_cta) {
   padding-top: 50px;
 }
-.section:not(.sec_value, .sec_cta) h3 {
+.section:not(.sec_cta) h3 {
   margin: 10px auto 20px;
 }
 
@@ -828,7 +858,7 @@ footer .copyright {
   padding: 30px;
   display: inline-block;
   position: relative;
-  top: -40px;
+  margin-top: -40px;
 }
 .news_top p {
   position: relative;
@@ -1078,6 +1108,10 @@ footer .copyright {
 
   .img_value_fun {
     order: 1;
+  }
+
+  .section.sec_value {
+    padding-top: 20px;
   }
 
   .sec_career {

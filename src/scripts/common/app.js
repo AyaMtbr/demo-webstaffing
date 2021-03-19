@@ -1,6 +1,8 @@
 window.addEventListener('load', () => {
   const menuItem = document.querySelectorAll(".menu_item");
   const modalMenu = document.querySelector(".menu_mobile");
+  const upBtn = document.querySelector(".up_btn");
+  const viewHeight = document.body.offsetHeight;
 
   /*=======================================
     openNav(): Open the nav on mbile view
@@ -81,6 +83,22 @@ window.addEventListener('load', () => {
         }, 700);
       };
     });
+  });
+
+  // Add function to the back-to-top button
+  upBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+  // Show the back-to-top button on scroll
+  ScrollTrigger.create({
+    trigger: ".sec_top",
+    start: "top" + viewHeight,
+    end: 99999,
+    toggleClass: {targets: ".up_btn", className: "scrolled"},
   });
 
   // Change the hamburger menu colour on scroll
