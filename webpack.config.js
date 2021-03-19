@@ -4,7 +4,7 @@ const FixStyleOnlyEntries = require("webpack-fix-style-only-entries");
 const TerserPlugin = require('terser-webpack-plugin');
 const path = require("path");
 const webpack = require("webpack");
-const mode = 'production';
+const mode = 'development';
 
 // Index page
 const index = {
