@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const FixStyleOnlyEntries = require("webpack-fix-style-only-entries");
 const TerserPlugin = require('terser-webpack-plugin');
 const path = require("path");
+const webpack = require("webpack");
 const mode = 'production';
 
 // Index page
@@ -33,7 +34,10 @@ const index = {
     }),
     new TerserPlugin({              // Prevent creation of LISENCE.txt on production mode
       extractComments: false
-    })
+    }),
+    new webpack.ProvidePlugin({
+      $: "jquery"
+    }),
   ],
   module: {
     rules: [
@@ -114,7 +118,10 @@ const member = {
     }),
     new TerserPlugin({              // Prevent creation of LISENCE.txt on production mode
       extractComments: false
-    })
+    }),
+    new webpack.ProvidePlugin({
+      $: "jquery"
+    }),
   ],
   module: {
     rules: [
@@ -183,7 +190,10 @@ const notFound = {
     }),
     new TerserPlugin({              // Prevent creation of LISENCE.txt on production mode
       extractComments: false
-    })
+    }),
+    new webpack.ProvidePlugin({
+      $: "jquery"
+    }),
   ],
   module: {
     rules: [

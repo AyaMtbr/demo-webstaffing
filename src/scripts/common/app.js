@@ -71,10 +71,8 @@ window.addEventListener('load', () => {
       if (destination) {
         const hashOffset = destination.offsetTop;
 
-        window.scrollTo({
-          top: hashOffset,
-          behavior: "smooth"
-        })
+        $('html, body').animate({scrollTop: hashOffset}, 500, "swing");
+
       // If the hash section exists in other page
       } else {
         document.body.classList.add('fade_in');
@@ -87,10 +85,7 @@ window.addEventListener('load', () => {
 
   // Add function to the back-to-top button
   upBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
+    $('html, body').animate({scrollTop: 0}, 500, "swing");
   });
 
   // Show the back-to-top button on scroll
